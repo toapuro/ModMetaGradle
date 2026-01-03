@@ -3,10 +3,11 @@ plugins {
     groovy
     `kotlin-dsl`
     `java-gradle-plugin`
+    `maven-publish`
 }
 
 group = "io.github.toapuro.modmetagradle"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 description = "Generate mods.toml"
 
 println("Version: $version")
@@ -37,6 +38,7 @@ gradlePlugin {
         description = project.description
     }
 }
+
 
 tasks.test {
     useJUnitPlatform()

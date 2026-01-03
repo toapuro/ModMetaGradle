@@ -1,9 +1,11 @@
 
 import org.gradle.testkit.runner.GradleRunner
+import org.gradle.testkit.runner.TaskOutcome
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 import java.io.File
+import kotlin.test.assertEquals
 
 class PluginTest {
     @TempDir lateinit var testProjectDir: File
@@ -26,17 +28,29 @@ class PluginTest {
         }
         modMeta {
             outputFile = file("mods.toml")
+            
+            file {
+                modLoader = "testLoader"
+                loaderVersion = "1.0"
+                license = "MIT"
+            }
+            
+            mod {
+                modId = "examplemod"
+            }
         }
         """.trimIndent()
         buildFile.writeText(buildFileContent)
 
+        val taskName = "generateModMeta"
         val result = GradleRunner.create()
             .withProjectDir(testProjectDir)
             .withPluginClasspath()
-            .withArguments("build")
+            .withArguments(taskName)
             .build()
 
-        val output = result.output
-        assert("BUILD SUCCESSFUL" in output)
+
+        val task = result.task(":${taskName}")
+        assertEquals(TaskOutcome.SUCCESS, task?.outcome)
     }
 }
