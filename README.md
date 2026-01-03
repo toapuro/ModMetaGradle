@@ -4,9 +4,10 @@ MetaInfoGradle is a Gradle plugin for Minecraft mod developers that generates mo
 
 Features
 
-- Generate mods.toml automatically from Gradle.
-- Keep mod metadata synchronized with your build.
-- Supports standard Forge metadata fields.
-- Seamless integration with Gradle build workflow.
+- No more manual mods.toml edits.
+
+- Supports full Forge metadata spec.
+
+- Fits right into your Gradle build pipeline.
 
 Usage - INDEV
