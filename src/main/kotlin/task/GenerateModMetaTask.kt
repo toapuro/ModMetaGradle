@@ -25,6 +25,8 @@ abstract class GenerateModMetaTask: DefaultTask() {
 
         val metaInfo = MetaInfo(fileMeta, modMeta, dependencies.all())
 
+        outputFile.mkdirs()
+
         val config = CommentedFileConfig
             .builder(outputFile)
             .build()

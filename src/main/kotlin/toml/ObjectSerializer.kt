@@ -3,6 +3,7 @@ package io.github.toapuro.modmetagradle.toml
 import com.electronwill.nightconfig.core.Config
 import groovy.json.JsonException
 import io.github.toapuro.modmetagradle.ext.nullIfEmpty
+import io.github.toapuro.modmetagradle.toml.ObjectSerializer.TRANSFORMS
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
@@ -11,6 +12,11 @@ import kotlin.reflect.KProperty1
 import kotlin.reflect.full.findAnnotations
 import kotlin.reflect.full.memberProperties
 
+/**
+ * A class that serializes class properties
+ *
+ * @property TRANSFORMS Transformers that convert values for handling in Config
+ */
 object ObjectSerializer {
     private val TRANSFORMS = mutableMapOf<KClass<*>, (Any?) -> Any?>()
 
@@ -28,9 +34,9 @@ object ObjectSerializer {
                 var rawValue: Any? = (field as KProperty1<Any, *>).get(data)
 
                 // Convert
-                for (convertion in TRANSFORMS) {
-                    if(convertion.key.isInstance(rawValue)) {
-                        rawValue = convertion.value.invoke(rawValue)
+                for (conversion in TRANSFORMS) {
+                    if(conversion.key.isInstance(rawValue)) {
+                        rawValue = conversion.value.invoke(rawValue)
                     }
                 }
 

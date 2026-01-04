@@ -1,9 +1,14 @@
+@file:Suppress("unused")
+
 package io.github.toapuro.modmetagradle.logic
 
 import org.gradle.api.Action
 import org.gradle.api.model.ObjectFactory
 import org.gradle.kotlin.dsl.newInstance
 
+/**
+ * Represents the dependencies block
+ */
 abstract class Dependencies(private val objects: ObjectFactory) {
 
     private val list = mutableListOf<MetaInfo.DependencyMeta>()

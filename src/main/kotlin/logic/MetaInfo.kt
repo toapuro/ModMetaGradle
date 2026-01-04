@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package io.github.toapuro.modmetagradle.logic
 
 import io.github.toapuro.modmetagradle.toml.ConfigName
@@ -6,6 +8,11 @@ import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
 
+/**
+ * Represents the mods.toml format
+ * @see <a href="https://docs.minecraftforge.net/en/latest/gettingstarted/modfiles/">Forge</a>
+ * @see <a href="https://docs.neoforged.net/docs/gettingstarted/modfiles/">Neoforeg</a>
+ */
 data class MetaInfo(
     val fileMeta: FileMeta,
     val modMeta: ModMeta,

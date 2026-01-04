@@ -2,6 +2,8 @@
 
 MetaInfoGradle is a Gradle plugin for Minecraft mod developers that generates mods.toml metadata directly from your build.gradle file.
 
+**NOTES: Neoforge is not currently supported**
+
 Features
 
 - No more manual mods.toml edits.
