@@ -1,6 +1,5 @@
 package io.github.toapuro.modmetagradle
 
-import io.github.toapuro.modmetagradle.task.GenerateModMetaTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.language.jvm.tasks.ProcessResources

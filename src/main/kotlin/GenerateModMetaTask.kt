@@ -1,9 +1,8 @@
-package io.github.toapuro.modmetagradle.task
+package io.github.toapuro.modmetagradle
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig
-import io.github.toapuro.modmetagradle.ModMetaExtension
 import io.github.toapuro.modmetagradle.logic.MetaInfo
-import io.github.toapuro.modmetagradle.logic.MetaInfoSerializer
+import io.github.toapuro.modmetagradle.serialize.MetaInfoSerializer
 import org.gradle.api.Action
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project

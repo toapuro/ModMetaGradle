@@ -1,7 +1,8 @@
-package io.github.toapuro.modmetagradle.logic
+package io.github.toapuro.modmetagradle.serialize
 
 import com.electronwill.nightconfig.core.Config
 import io.github.toapuro.modmetagradle.ext.setValueList
+import io.github.toapuro.modmetagradle.logic.MetaInfo
 import io.github.toapuro.modmetagradle.toml.ObjectSerializer
 
 object MetaInfoSerializer {
