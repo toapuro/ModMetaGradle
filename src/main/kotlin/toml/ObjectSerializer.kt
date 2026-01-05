@@ -29,7 +29,7 @@ object ObjectSerializer {
                 field.findAnnotations(ConfigName::class).firstOrNull()?.let {
                     name = it.name
                 }
-                val isRequired = field.findAnnotations(OptionalConfig::class).isEmpty()
+                val isRequired = !field.findAnnotations(Mandatory::class).isEmpty()
 
                 var rawValue: Any? = (field as KProperty1<Any, *>).get(data)
 
