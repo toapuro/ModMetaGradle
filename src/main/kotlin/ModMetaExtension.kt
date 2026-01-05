@@ -31,5 +31,5 @@ interface ModMetaExtension {
         action.execute(dependencies)
     }
 
-    fun autoBuildOutput()
+    fun autoForgeOutput()
 }

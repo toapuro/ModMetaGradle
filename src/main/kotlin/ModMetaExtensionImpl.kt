@@ -5,7 +5,7 @@ import org.gradle.api.model.ObjectFactory
 
 abstract class ModMetaExtensionImpl(val project: Project, val objects: ObjectFactory) : ModMetaExtension {
 
-    override fun autoBuildOutput() {
+    override fun autoForgeOutput() {
         outputFile.set(objects.fileProperty().also {
             it.set(project.layout.buildDirectory.file("resources/main/META-INF/mods.toml"))
         })
